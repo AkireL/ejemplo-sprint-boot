@@ -2,6 +2,9 @@ package com.example.demo.domain;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
 import lombok.Data;
 
 @Data
@@ -14,9 +17,11 @@ public class Persona implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idpersona;
-    
+    @NotEmpty
     private String nombre;
+    @NotEmpty
     private String apellidos;
+    @Email
     private String email;
     private String telefono;
     
