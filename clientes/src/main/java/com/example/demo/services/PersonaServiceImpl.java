@@ -36,10 +36,8 @@ public class PersonaServiceImpl implements PersonaServicio{
     }
 
     @Override
-    @Transactional
     public void eliminar(Persona persona) {
         personaDao.delete(persona);
-        
     }
 
     @Override

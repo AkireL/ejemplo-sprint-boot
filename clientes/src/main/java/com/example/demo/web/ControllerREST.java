@@ -26,7 +26,7 @@ public class ControllerREST {
     
     @GetMapping("/agregar")
     public String agregar(Persona persona){
-        return "Agregar";
+        return "modificar";
     }
     
     @PostMapping("/guardar")
@@ -39,5 +39,12 @@ public class ControllerREST {
         persona = personaServ.encontrarPersona(persona);
         model.addAttribute("persona", persona);
         return "modificar";
+    }
+
+    @GetMapping("/eliminar/{idpersona}")
+    public String eliminar(Persona persona){
+        personaServ.eliminar(persona);
+        log.info("Entre a eliminar");
+        return "redirect:/";
     }
 }

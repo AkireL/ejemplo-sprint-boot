@@ -12,14 +12,7 @@ and open the template in the editor.
     </head>
     <body>
         <div>Demo</div>
-       
-        <!-- Nombre <span th:text="${persona.nombre}"></span>
-        <br>
-        Apellidos <span th:text="${persona.apellido}"></span>
-        <br>
-        Email <span th:text="${persona.email}"></span>
-        <br>
-        Telefono <span th:text="${persona.telefono}"></span>-->
+        <a th:href="@{/agregar/}" th:text="Nuevo"></a>
         <div th:if="${personas != null and !personas.empty}">
             <table>
                 <tr>
@@ -36,7 +29,8 @@ and open the template in the editor.
                     <td th:text="${persona.email}"></td>
                     <td th:text="${persona.telefono}"></td>
                     <td><a th:href="@{/editar/} + ${persona.idpersona}" th:text="Editar"></a></td>
-                    <td>Eliminar</td>
+                    <td></td>
+                    <td><a th:href="@{/eliminar/} + ${persona.idpersona}" th:text="Eliminar"></a></td>
                 </tr>
             </table>
         </div>
